@@ -7,7 +7,7 @@ const _calcNumSubscribes = (params) => {
     // V : voice factor
     // N : nombre d'utilisateur actif dans une cellule
     if(i && w && r && v && n){
-
+        
     }else return {
         code : 401,
         message : "il ya des paramètres qui manquent"
