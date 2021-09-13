@@ -8,197 +8,244 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
 </head>
 <body>
-    <header class="p-2">
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Calculateur</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Documentations | Cours</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">About us</a>
-            </li>
-        </ul>
-        <hr class="">
-    </header>
-    <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-            <div class="container-fluid p-5">
-                <div class="jumbotron">
-                    <h1 class="display-4">Basic RNC Calculator</h1>
-                    <p class="lead">Cette application est conçue pour les fins pédagogiques, est donc ouverte pour toutes modifications et suggestions pour son perfectionnement. Merci !</p>
-                    <hr class="my-4">
-                    <div class="">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <h4 class="mb-4">Algo 1 : En fonction de la première auestion c.f.r TP</h4>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="col-auto bg-light p-3 border rounded">
-                                    <label class="" for="bs">Type BS</label>
-                                    <div class="input-group mb-2">
-                                        <div class="input-group-prepend">
-                                        <div class="input-group-text">Base Station</div>
-                                        </div>
-                                        <select name="bs" id="bs" class="form-control">
-                                            <option value="omni">Omni Directional Base Station</option>
-                                            <option value="macrocells">Macro-cells</option>
-                                        </select>
-                                    </div>
-                                    <!-- case of omi selected -->
-                                    <div class="row case-omni">
-                                        <div class="input-group mb-2 col-lg-6">
-                                            <div class="input-group-prepend">
-                                            <div class="input-group-text">i pour&nbsp;<strong> UpLink</strong></div>
-                                            </div>
-                                            <input type="number" min="0" class="form-control" name="iuplink">
-                                        </div>
-                                        <div class="input-group mb-2 col-lg-6">
-                                            <div class="input-group-prepend">
-                                            <div class="input-group-text">i pour&nbsp;<strong> DownLink</strong></div>
-                                            </div>
-                                            <input type="number" min="0" class="form-control" name="idownlink">
-                                        </div>
-                                        <div class="input-group p-2 pl-4">
-                                            <strong class="text-primary">i : représente le rapport entre l'interference inter-celluleire et l'interferance intra-cellulaire</strong>
-                                        </div>
-                                    </div>
-                                    <!-- end of  -->
-                                    <!-- case macro cells -->
-                                    <div class="row case-macrocells d-none">
-                                        <div class="input-group mb-2 col-lg-6">
-                                            <div class="input-group-prepend">
-                                            <div class="input-group-text">α pour&nbsp;<strong> UpLink</strong></div>
-                                            </div>
-                                            <input type="number" min="0" class="form-control" name="auplink" disabled>
-                                        </div>
-                                        <div class="input-group mb-2 col-lg-6">
-                                            <div class="input-group-prepend">
-                                            <div class="input-group-text">α pour&nbsp;<strong> DownLink</strong></div>
-                                            </div>
-                                            <input type="number" min="0" class="form-control" name="adownlink">
-                                        </div>
-                                        <div class="input-group p-2 pl-4">
-                                            <strong class="text-primary">α : représente le facteur d'orthogonalié</strong>
-                                        </div>
-                                    </div>
-                                    <!-- end macro -->
+    <div class="container-fluid">
+        <header class="p-2">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Calculateur</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Documentations | Cours</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">About us</a>
+                </li>
+            </ul>
+            <hr class="">
+        </header>
+        <div class="tab-content p-0" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="">
+                    <div class="jumbotron">
+                        <h1 class="display-4">Basic RNC Calculator</h1>
+                        <p class="lead">Cette application est conçue pour les fins pédagogiques, est donc ouverte pour toutes modifications et suggestions pour son perfectionnement. Merci !</p>
+                        <hr class="my-4">
+                        <div class="">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h4 class="mb-4">Algo 1 : En fonction de la première auestion c.f.r TP</h4>
                                 </div>
-                            </div>
-                            <!--  -->
-                            <div class="col-lg-6">
-                                <div class="col-auto bg-light p-3 border rounded">
-                                    <label for="">Voice activity | Voice factor</label>
-                                    <div class="row case-omni">
-                                        <div class="input-group mb-2 col-lg-6">
+                                <div class="col-lg-6">
+                                    <div class="col-auto bg-light p-3 border rounded">
+                                        <label class="" for="bs">Type BS</label>
+                                        <div class="input-group mb-2">
                                             <div class="input-group-prepend">
-                                            <div class="input-group-text">v pour&nbsp;<strong> UpLink</strong></div>
+                                            <div class="input-group-text">Base Station</div>
                                             </div>
-                                            <input type="number" min="0" class="form-control" name="iuplink">
+                                            <select name="bs" id="bs" class="form-control">
+                                                <option value="omni">Omni Directional Base Station</option>
+                                                <option value="macrocells">Macro-cells</option>
+                                            </select>
                                         </div>
-                                        <div class="input-group mb-2 col-lg-6">
-                                            <div class="input-group-prepend">
-                                            <div class="input-group-text">v pour&nbsp;<strong> DownLink</strong></div>
+                                        <!-- case of omi selected -->
+                                        <div class="row case-omni">
+                                            <div class="input-group mb-2 col-lg-6">
+                                                <div class="input-group-prepend">
+                                                <div class="input-group-text">i pour&nbsp;<strong> UpLink</strong></div>
+                                                </div>
+                                                <input type="number" min="0" class="form-control" name="iuplink">
                                             </div>
-                                            <input type="number" min="0" class="form-control" name="idownlink">
+                                            <div class="input-group mb-2 col-lg-6">
+                                                <div class="input-group-prepend">
+                                                <div class="input-group-text">i pour&nbsp;<strong> DownLink</strong></div>
+                                                </div>
+                                                <input type="number" min="0" class="form-control" name="idownlink">
+                                            </div>
+                                            <div class="input-group p-2 pl-4">
+                                                <strong class="text-primary">i : représente le rapport entre l'interference inter-celluleire et l'interferance intra-cellulaire</strong>
+                                            </div>
                                         </div>
-                                        <div class="input-group p-2 pl-4">
-                                            <strong class="text-primary">v : représente le facteur de voix </strong>
+                                        <!-- end of  -->
+                                        <!-- case macro cells -->
+                                        <div class="row case-macrocells d-none">
+                                            <div class="input-group mb-2 col-lg-6">
+                                                <div class="input-group-prepend">
+                                                <div class="input-group-text">α pour&nbsp;<strong> UpLink</strong></div>
+                                                </div>
+                                                <input type="number" min="0" class="form-control" name="auplink" disabled>
+                                            </div>
+                                            <div class="input-group mb-2 col-lg-6">
+                                                <div class="input-group-prepend">
+                                                <div class="input-group-text">α pour&nbsp;<strong> DownLink</strong></div>
+                                                </div>
+                                                <input type="number" min="0" class="form-control" name="adownlink">
+                                            </div>
+                                            <div class="input-group p-2 pl-4">
+                                                <strong class="text-primary">α : représente le facteur d'orthogonalié</strong>
+                                            </div>
+                                        </div>
+                                        <!-- end macro -->
+                                    </div>
+                                </div>
+                                <!--  -->
+                                <div class="col-lg-6">
+                                    <div class="col-auto bg-light p-3 border rounded">
+                                        <label for="">Voice activity | Voice factor</label>
+                                        <div class="row voice-act">
+                                            <div class="input-group mb-2 col-lg-6">
+                                                <div class="input-group-prepend">
+                                                <div class="input-group-text">v pour&nbsp;<strong> UpLink</strong></div>
+                                                </div>
+                                                <input type="number" min="0" class="form-control" name="vuplink">
+                                            </div>
+                                            <div class="input-group mb-2 col-lg-6">
+                                                <div class="input-group-prepend">
+                                                <div class="input-group-text">v pour&nbsp;<strong> DownLink</strong></div>
+                                                </div>
+                                                <input type="number" min="0" class="form-control" name="vdownlink">
+                                            </div>
+                                            <div class="input-group p-2 pl-4">
+                                                <strong class="text-primary">v : représente le facteur de voix </strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  -->
+                                <div class="col-lg-6 mt-2">
+                                    <div class="col-auto bg-light p-3 border rounded">
+                                        <label for="">Débit de l'Utilisateur | User data rate en ( Kbps )</label>
+                                        <div class="row voice-act">
+                                            <div class="input-group mb-2 col-lg-6">
+                                                <div class="input-group-prepend">
+                                                <div class="input-group-text">r pour&nbsp;<strong> UpLink</strong></div>
+                                                </div>
+                                                <input type="number" min="0" class="form-control" name="ruplink">
+                                            </div>
+                                            <div class="input-group mb-2 col-lg-6">
+                                                <div class="input-group-prepend">
+                                                <div class="input-group-text">r pour&nbsp;<strong> DownLink</strong></div>
+                                                </div>
+                                                <input type="number" min="0" class="form-control" name="rdownlink">
+                                            </div>
+                                            <div class="input-group p-2 pl-4">
+                                                <strong class="text-primary">r : représente le débit pour chaque utilisateur</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mt-2">
+                                    <div class="col-auto bg-light p-3 border rounded">
+                                        <label for="">Voice activity | Voice factor</label>
+                                        <div class="row voice-act">
+                                            <div class="input-group mb-2 col-lg-6">
+                                                <div class="input-group-prepend">
+                                                <div class="input-group-text">v pour&nbsp;<strong> UpLink</strong></div>
+                                                </div>
+                                                <input type="number" min="0" class="form-control" name="vuplink">
+                                            </div>
+                                            <div class="input-group mb-2 col-lg-6">
+                                                <div class="input-group-prepend">
+                                                <div class="input-group-text">v pour&nbsp;<strong> DownLink</strong></div>
+                                                </div>
+                                                <input type="number" min="0" class="form-control" name="vdownlink">
+                                            </div>
+                                            <div class="input-group p-2 pl-4">
+                                                <strong class="text-primary">v : représente le facteur de voix </strong>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                  </div>
+                      </div>
+                </div>
             </div>
-        </div>
-        <!-- documentation section -->
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <div class="container-fluid p-5">
-                <div class="jumbotron">
-                    <h1 class="display-4">Documentations | Cours</h1>
-                    <p class="lead">Vous pouvez lire en ligne ou télécharger les contenus du cours dispensé par <strong>Dr. Ir. Tech. BARAKA MUSHAGE Olivier</strong></p>
-                    <hr class="my-4">
-                    <div class="row">
-                        <div class="nav flex-column nav-pills col-lg-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                                Chap 1 : Calcul du bruit dans les systèmes de télécommunications
-                            </a>
-                            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                               Chap 2 : Codage et Modulation des signaux numériques
-                            </a>
-                            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                                Chap 3 : Etude du Trafic sur un Réseau de Télécommunication
-                            </a>
-                            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                                Chap 4 : Ingénierie des radiocommunications mobiles terrestres
-                            </a>                           
-                            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-setting" role="tab" aria-controls="v-pills-setting" aria-selected="false">
-                                Chap 5 : Dimensionnement des parties radio des réseaux cellulaires
-                            </a>
-                            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settingss" role="tab" aria-controls="v-pills-setting" aria-selected="false">
-                                Erlang B Table full
-                            </a>
-                        </div>
-                        <div class="tab-content col-lg-9" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                <embed src="assets/cours/Chap 1_Calcul du bruit dans les systèmes de télécommunications.pdf" width="100%" height="375" type="application/pdf">
+            <!-- documentation section -->
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="">
+                    <div class="jumbotron">
+                        <h1 class="display-4">Docs | Cours</h1>
+                        <p class="lead">Vous pouvez lire en ligne ou télécharger les contenus du cours dispensé par <strong>Dr. Ir. Tech. BARAKA MUSHAGE Olivier</strong></p>
+                        <hr class="my-4">
+                        <div class="row">
+                            <div class="nav flex-column nav-pills col-lg-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                                    Chap 1 : Calcul du bruit dans les systèmes de télécommunications
+                                </a>
+                                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                                   Chap 2 : Codage et Modulation des signaux numériques
+                                </a>
+                                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                                    Chap 3 : Etude du Trafic sur un Réseau de Télécommunication
+                                </a>
+                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                                    Chap 4 : Ingénierie des radiocommunications mobiles terrestres
+                                </a>                           
+                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-setting" role="tab" aria-controls="v-pills-setting" aria-selected="false">
+                                    Chap 5 : Dimensionnement des parties radio des réseaux cellulaires
+                                </a>
+                                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settingss" role="tab" aria-controls="v-pills-setting" aria-selected="false">
+                                    Erlang B Table full
+                                </a>
                             </div>
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                <embed src="assets/cours/Chap 2_Codage et Modulation des signaux numériques.pdf" width="100%" height="375" type="application/pdf">
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                                <embed src="assets/cours/Chap 3_Etude du Trafic sur un Réseau de Télécommunication.pdf" width="100%" height="375" type="application/pdf">
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                <embed src="assets/cours/Chap 4_Ingénierie des radiocommunications mobiles terrestres.pdf" width="100%" height="375" type="application/pdf">
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-setting" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                <embed src="assets/cours/Chap 5_Dimensionnement des parties radio des réseaux cellulaires.pdf" width="100%" height="375" type="application/pdf">
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-settingss" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                <embed src="assets/cours/Erlang B Table full.pdf" width="100%" height="375" type="application/pdf">
+                            <div class="tab-content col-lg-9" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                    <embed src="assets/cours/Chap 1_Calcul du bruit dans les systèmes de télécommunications.pdf" width="100%" height="390" type="application/pdf">
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                    <embed src="assets/cours/Chap 2_Codage et Modulation des signaux numériques.pdf" width="100%" height="375" type="application/pdf">
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                    <embed src="assets/cours/Chap 3_Etude du Trafic sur un Réseau de Télécommunication.pdf" width="100%" height="375" type="application/pdf">
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                    <embed src="assets/cours/Chap 4_Ingénierie des radiocommunications mobiles terrestres.pdf" width="100%" height="375" type="application/pdf">
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-setting" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                    <embed src="assets/cours/Chap 5_Dimensionnement des parties radio des réseaux cellulaires.pdf" width="100%" height="375" type="application/pdf">
+                                </div>
+                                <div class="tab-pane fade" id="v-pills-settingss" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                    <embed src="assets/cours/Erlang B Table full.pdf" width="100%" height="375" type="application/pdf">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- About us section here -->
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <div class="container-fluid p-5">
-                <div class="jumbotron">
-                    <h1 class="display-4">A propos de nous</h1>
-                    <p class="lead">
-                        Ce travaail a été réaliser pour un but d'apprentissage dans le 
-                        <strong>
-                            COURS D’EXPLOITATION DES RESEAUX DE
-                        TELECOMMUNICATION
-                        </strong>
-                    </p>
-                    <hr class="my-4">
-                    <p>ce travaail a été réaliser sous la supervision du <strong>Dr. Ir. Tech. BARAKA MUSHAGE Olivier</strong></p>
-                    <p class="lead">
-                      <h5 class="pb-2">Participants : </h5>
-                      <p>KUBUYA DAVID Darone</p>
-                      <p>KAHOZI MBAYO Sylvester</p>
-                      <p>MULONDA JEAN </p>
-                      <p>BAHATI BAHANE Chance</p>
-                      <p>KATAKA Claudette</p>
-                      <p>MULWAHALI Adrienne</p>
-
-                    </p>
-                  </div>
+            <!-- About us section here -->
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <div class="">
+                    <div class="jumbotron">
+                        <h1 class="display-4">A propos de nous</h1>
+                        <p class="lead">
+                            Ce travaail a été réaliser pour un but d'apprentissage dans le 
+                            <strong>
+                                COURS D’EXPLOITATION DES RESEAUX DE
+                            TELECOMMUNICATION
+                            </strong>
+                        </p>
+                        <hr class="my-4">
+                        <p>ce travaail a été réaliser sous la supervision du <strong>Dr. Ir. Tech. BARAKA MUSHAGE Olivier</strong></p>
+                        <p class="lead">
+                          <h5 class="pb-2">Participants : </h5>
+                          <p>KUBUYA DAVID Darone</p>
+                          <p>KAHOZI MBAYO Sylvester</p>
+                          <p>MULONDA JEAN </p>
+                          <p>BAHATI BAHANE Chance</p>
+                          <p>KATAKA Claudette</p>
+                          <p>MULWAHALI Adrienne</p>
+    
+                        </p>
+                      </div>
+                </div>
             </div>
         </div>
+        <footer class="w-100 p-2 text-center">
+            <h6>
+                <span>&copy; All rights reserved | ULPGL FSTA TECH<sub>2</sub> 2020 - 2021</span>
+            </h6>
+        </footer>
     </div>
-    <footer class="w-100 p-2 text-center">
-        <h6>
-            <span>&copy; All rights reserved | ULPGL FSTA TECH<sub>2</sub> 2020 - 2021</span>
-        </h6>
-    </footer>
     <!-- ----------------------------------------------- -->
     <script src="assets/jquery/jquery-3.5.1.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
