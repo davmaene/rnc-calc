@@ -1,0 +1,4 @@
+# rnc-calc
+une application de calc des RNC
+COURS D’EXPLOITATION DES RESEAUX DE TELECOMMUNICATION
+``` ULPGL FSTA | TECH 2 ```
