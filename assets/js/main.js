@@ -6,17 +6,34 @@
             switch (tp) {
                 case "omni":
                     if($("[name='idownlink']").val().length > 0 && $("[name='iuplink']").val().length > 0){
+                        $("[name='idownlink']").removeClass("border-danger")
                         m = true;
-                    }else m = false;
+                    }else{
+                        m = false;
+                        $("[name='idownlink']").addClass("border-danger")
+                        $("[name='iuplink']").addClass("border-danger")
+                    }
                     break;
                 case "macrocells":
-                    if($('[name="adownlink"]'))
+                    if($('[name="adownlink"]').val().length > 0){
+                        $("[name='adownlink']").removeClass("border-danger")
+                        m = true;
+                    }else{
+                        $("[name='adownlink']").addClass("border-danger")
+                        m = false;
+                    }
                     break;
                 default:
+                    $("[name='idownlink']").addClass("border-danger")
+                    $("[name='adownlink']").addClass("border-danger")
+                    $("[name='iuplink']").addClass("border-danger")
+
+                    m = false;
                     break;
             }
+            return m;
         }
-        return true;
+        return _checkbstype();
     } 
     const _calcNumSubscribes = (params) => {
         const { i = new Number(), w = new Number(), r = new Number(), v = new Number(), l = new Number(), n = new Number(), } = params;
@@ -56,7 +73,7 @@
         $(span).attr(
             {
                 id: "loader",
-                class: "spinner-grow spinner-grow-md"
+                class: "spinner-grow spinner-grow-sm"
             }
         )
         e.preventDefault();
