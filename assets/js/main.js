@@ -1,4 +1,7 @@
 (() => {
+    const _checked = () => {
+        return true;
+    } 
     const _calcNumSubscribes = (params) => {
         const { i = new Number(), w = new Number(), r = new Number(), v = new Number(), l = new Number(), n = new Number(), } = params;
         // i = new Number(), w = new Number(), r = new Number(), v = new Number(), N = new Number()
@@ -29,6 +32,21 @@
                 $(".case-macrocells").addClass("d-none");
                 $(".case-omni").addClass("d-none");
                 break;
+        }
+    });
+
+    $(".btn btn-primary col-lg-4 btn-md").on('click', (e) => {
+        const span = document.createElement("span");
+        $(span).attr(
+            {
+                id: "loader",
+                class: "spinner-grow spinner-grow-md"
+            }
+        )
+        e.preventDefault();
+        $(e).addAttr("disabled").html(span)
+        if(_checked()){
+
         }
     })
 })()
