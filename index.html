@@ -30,9 +30,11 @@
                     <p class="lead">Cette application est conçue pour les fins pédagogiques, est donc ouverte pour toutes modifications et suggestions pour son perfectionnement. Merci !</p>
                     <hr class="my-4">
                     <div class="">
-                        <div class="w-100">
-                            <h4>Algo 1 : En fonction de la première auestion c.f.r TP</h4>
-                            <div class="row mt-3 col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4 class="mb-4">Algo 1 : En fonction de la première auestion c.f.r TP</h4>
+                            </div>
+                            <div class="col-lg-6">
                                 <div class="col-auto bg-light p-3 border rounded">
                                     <label class="" for="bs">Type BS</label>
                                     <div class="input-group mb-2">
@@ -85,9 +87,26 @@
                                 </div>
                             </div>
                             <!--  -->
-                            <div class="row mt-3 col-lg-6">
+                            <div class="col-lg-6">
                                 <div class="col-auto bg-light p-3 border rounded">
                                     <label for="">Voice activity | Voice factor</label>
+                                    <div class="row case-omni">
+                                        <div class="input-group mb-2 col-lg-6">
+                                            <div class="input-group-prepend">
+                                            <div class="input-group-text">v pour&nbsp;<strong> UpLink</strong></div>
+                                            </div>
+                                            <input type="number" min="0" class="form-control" name="iuplink">
+                                        </div>
+                                        <div class="input-group mb-2 col-lg-6">
+                                            <div class="input-group-prepend">
+                                            <div class="input-group-text">v pour&nbsp;<strong> DownLink</strong></div>
+                                            </div>
+                                            <input type="number" min="0" class="form-control" name="idownlink">
+                                        </div>
+                                        <div class="input-group p-2 pl-4">
+                                            <strong class="text-primary">v : représente le facteur de voix </strong>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
