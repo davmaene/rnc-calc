@@ -5,13 +5,18 @@
             let m = false;
             switch (tp) {
                 case "omni":
-                    if($("[name='idownlink']").val().length > 0 && $("[name='iuplink']").val().length > 0){
+                    if($("[name='idownlink']").val().length > 0){
                         $("[name='idownlink']").removeClass("border-danger")
-                        m = true;
+                        if($("[name='iuplink']").val().length > 0){
+                            $("[name='iuplink']").removeClass("border-danger")
+                            m = true;
+                        }else{
+                            $("[name='iuplink']").addClass("border-danger")
+                            m = false;
+                        }
                     }else{
                         m = false;
                         $("[name='idownlink']").addClass("border-danger")
-                        $("[name='iuplink']").addClass("border-danger")
                     }
                     break;
                 case "macrocells":
@@ -33,7 +38,22 @@
             }
             return m;
         }
-        return _checkbstype();
+        const _checkvoicefactor = () => {
+            if($('[name="vuplink"]').val().length > 0){
+                $('[name="vuplink"]').removeClass("border-danger") 
+                if($('[name="vdownlink"]').val().length > 0){
+                    $('[name="vuplink"]').removeClass("border-danger")
+                    return true
+                }else{
+                    $('[name="vuplink"]').addClass("border-danger")  
+                    return false
+                }
+            }else{
+                $('[name="vuplink"]').addClass("border-danger")  
+                return false
+            }
+        }
+        return _checkbstype() && _checkvoicefactor();
     } 
     const _calcNumSubscribes = (params) => {
         const { i = new Number(), w = new Number(), r = new Number(), v = new Number(), l = new Number(), n = new Number(), } = params;
@@ -77,7 +97,7 @@
             }
         )
         e.preventDefault();
-        $(e.target).prop("disabled", true).html(span)
+        // $(e.target).prop("disabled", true).html(span)
         if(_checked()){
 
         }
