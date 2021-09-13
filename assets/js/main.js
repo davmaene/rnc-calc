@@ -1,5 +1,21 @@
 (() => {
     const _checked = () => {
+        const _checkbstype = () => {
+            const tp = $("#bs").val()
+            let m = false;
+            switch (tp) {
+                case "omni":
+                    if($("[name='idownlink']").val().length > 0 && $("[name='iuplink']").val().length > 0){
+                        m = true;
+                    }else m = false;
+                    break;
+                case "macrocells":
+                    if($('[name="adownlink"]'))
+                    break;
+                default:
+                    break;
+            }
+        }
         return true;
     } 
     const _calcNumSubscribes = (params) => {
