@@ -1,4 +1,5 @@
 # rnc-calc
 une application de calc des RNC
 COURS D’EXPLOITATION DES RESEAUX DE TELECOMMUNICATION
+# BY ULPGL FSTA TECH 2 | 2020 - 2021
 ``` ULPGL FSTA | TECH 2 ```
