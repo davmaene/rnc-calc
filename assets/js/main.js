@@ -35,7 +35,7 @@
         }
     });
 
-    $(".btn btn-primary col-lg-4 btn-md").on('click', (e) => {
+    $(".calc").on('click', (e) => {
         const span = document.createElement("span");
         $(span).attr(
             {
@@ -44,7 +44,7 @@
             }
         )
         e.preventDefault();
-        $(e).addAttr("disabled").html(span)
+        $(e.target).prop("disabled", true).html(span)
         if(_checked()){
 
         }
