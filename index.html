@@ -11,7 +11,7 @@
     <header class="p-2">
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Acceuil</a>
+              <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Calculateur</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Documentations | Cours</a>
@@ -29,10 +29,60 @@
                     <h1 class="display-4">Basic RNC Calculator</h1>
                     <p class="lead">Cette application est conçue pour les fins pédagogiques, est donc ouverte pour toutes modifications et suggestions pour son perfectionnement. Merci !</p>
                     <hr class="my-4">
-                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                    <p class="lead">
-                      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                    </p>
+                    <div class="">
+                        <div class="w-100">
+                            <h4>Algo 1 : En fonction de la première auestion c.f.r TP</h4>
+                            <div class="row mt-3">
+                                <div class="col-auto bg-light p-3 border rounded">
+                                    <label class="" for="bs">Type BS</label>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                        <div class="input-group-text">Base Station</div>
+                                        </div>
+                                        <select name="bs" id="bs" class="form-control">
+                                            <option value="omni">Omni Directional Base Station</option>
+                                            <option value="macrocells">Macro-cells</option>
+                                        </select>
+                                    </div>
+                                    <!-- case of omi selected -->
+                                    <div class="row case-omni">
+                                        <div class="input-group mb-2 col-lg-6">
+                                            <div class="input-group-prepend">
+                                            <div class="input-group-text">i pour&nbsp;<strong> UpLink</strong></div>
+                                            </div>
+                                            <input type="number" min="0" class="form-control" name="iuplink">
+                                        </div>
+                                        <div class="input-group mb-2 col-lg-6">
+                                            <div class="input-group-prepend">
+                                            <div class="input-group-text">i pour&nbsp;<strong> DownLink</strong></div>
+                                            </div>
+                                            <input type="number" min="0" class="form-control" name="idownlink">
+                                        </div>
+                                    </div>
+                                    <!-- end of  -->
+                                    <!-- case macro cells -->
+                                    <div class="row case-macrocells d-none">
+                                        <div class="input-group mb-2 col-lg-6">
+                                            <div class="input-group-prepend">
+                                            <div class="input-group-text">α pour&nbsp;<strong> UpLink</strong></div>
+                                            </div>
+                                            <input type="number" min="0" class="form-control" name="iuplink" disabled>
+                                        </div>
+                                        <div class="input-group mb-2 col-lg-6">
+                                            <div class="input-group-prepend">
+                                            <div class="input-group-text">α pour&nbsp;<strong> DownLink</strong></div>
+                                            </div>
+                                            <input type="number" min="0" class="form-control" name="idownlink">
+                                        </div>
+                                        <div class="input-group p-2 pl-4">
+                                            <strong class="text-primary">α : représente le facteur d'orthogonalié</strong>
+                                        </div>
+                                    </div>
+                                    <!-- end macro -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                   </div>
             </div>
         </div>
