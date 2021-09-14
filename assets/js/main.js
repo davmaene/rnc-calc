@@ -42,10 +42,10 @@
             if($('[name="vuplink"]').val().length > 0){
                 $('[name="vuplink"]').removeClass("border-danger") 
                 if($('[name="vdownlink"]').val().length > 0){
-                    $('[name="vuplink"]').removeClass("border-danger")
+                    $('[name="vdownlink"]').removeClass("border-danger")
                     return true
                 }else{
-                    $('[name="vuplink"]').addClass("border-danger")  
+                    $('[name="vdownlink"]').addClass("border-danger")  
                     return false
                 }
             }else{
@@ -53,7 +53,70 @@
                 return false
             }
         }
-        return _checkbstype() && _checkvoicefactor();
+        const _checkuserdatarate = () => {
+            if($('[name="ruplink"]').val().length > 0){
+                $('[name="ruplink"]').removeClass("border-danger") 
+                if($('[name="rdownlink"]').val().length > 0){
+                    $('[name="rdownlink"]').removeClass("border-danger")
+                    return true
+                }else{
+                    $('[name="rdownlink"]').addClass("border-danger")  
+                    return false
+                }
+            }else{
+                $('[name="ruplink"]').addClass("border-danger")  
+                return false
+            }
+        }
+        const _checkchiprate = () => {
+            if($('[name="wuplink"]').val().length > 0){
+                $('[name="wuplink"]').removeClass("border-danger") 
+                if($('[name="wdownlink"]').val().length > 0){
+                    $('[name="wdownlink"]').removeClass("border-danger")
+                    return true
+                }else{
+                    $('[name="wdownlink"]').addClass("border-danger")  
+                    return false
+                }
+            }else{
+                $('[name="wuplink"]').addClass("border-danger")  
+                return false
+            }
+        }
+        const _checken = () => {
+            if($('[name="enuplink"]').val().length > 0){
+                $('[name="enuplink"]').removeClass("border-danger") 
+                if($('[name="endownlink"]').val().length > 0){
+                    $('[name="endownlink"]').removeClass("border-danger")
+                    return true
+                }else{
+                    $('[name="endownlink"]').addClass("border-danger")  
+                    return false
+                }
+            }else{
+                $('[name="enuplink"]').addClass("border-danger")  
+                return false
+            }
+        }
+        const _checkloadfatory = () => {
+            if($('[name="lduplink"]').val().length > 0){
+                $('[name="lduplink"]').removeClass("border-danger") 
+                if($('[name="lddownlink"]').val().length > 0){
+                    $('[name="lddownlink"]').removeClass("border-danger")
+                    return true
+                }else{
+                    $('[name="lddownlink"]').addClass("border-danger")  
+                    return false
+                }
+            }else{
+                $('[name="lduplink"]').addClass("border-danger")  
+                return false
+            }
+        }
+        // _checkbstype() && _checkvoicefactor() && _checkchiprate() && _checkuserdatarate && _checken() && _checkloadfatory()
+        if(_checkbstype() && _checkvoicefactor() && _checkchiprate() && _checkuserdatarate && _checken() && _checkloadfatory()){
+
+        }else return false;
     } 
     const _calcNumSubscribes = (params) => {
         const { i = new Number(), w = new Number(), r = new Number(), v = new Number(), l = new Number(), n = new Number(), } = params;
@@ -97,9 +160,8 @@
             }
         )
         e.preventDefault();
-        // $(e.target).prop("disabled", true).html(span)
-        if(_checked()){
-
+        if(_checked() instanceof Object){
+            // $(e.target).prop("disabled", true).html(span)
         }
     })
 })()
