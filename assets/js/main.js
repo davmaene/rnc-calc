@@ -195,6 +195,10 @@
         $('.outputloadfactorperuserdw').html(loadfactordownlink * 100)
         $('.outpnbuserdw').html(nbuser)
         $('.convertnbuserdw').html(Math.round(nbuser))
+        setTimeout(() => {
+            $('#loader').remove()
+            $('.calc').removeAttr("disabled").html("<span><b>Calculer</b></span>")
+        }, 300)
     };
     $('#bs').on("change", (e) => {
         e.preventDefault()
@@ -237,6 +241,20 @@
                     l: infos['lb']['vals']['lbup'],
                     e: infos['eb']['vals']['ebup']
                 })
+                _calcNumSubscribesDOWNLINK({
+                    i: infos['bs']['vals']['idw'],
+                    a: infos['bs']['vals']['alpdw'],
+                    w: infos['cr']['vals']['wup'],
+                    r: infos['ur']['vals']['rdw'],
+                    v: infos['va']['vals']['adw'],
+                    l: infos['lb']['vals']['lbdw'],
+                    e: infos['eb']['vals']['ebdw']
+                })
+            }else{
+                $('.outputloadfactorperuser').html(null);
+                $('.converloadfac').html(null);
+                $('.outpnbuser').html(null);
+                $('.convertnbuser').html(null);
                 _calcNumSubscribesDOWNLINK({
                     i: infos['bs']['vals']['idw'],
                     a: infos['bs']['vals']['alpdw'],
