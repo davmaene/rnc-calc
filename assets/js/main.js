@@ -178,7 +178,7 @@
             $('.outputloadfactorperuser').html(loadfactoruplink * 100);
             $('.converloadfac').html(Math.floor(loadfactoruplink * 100));
             $('.outpnbuser').html(nbuser);
-            $('.convertnbuser').html(Math.floor(nbuser));
+            $('.convertnbuser').html(Math.round(nbuser));
             setTimeout(() => {
                 $('#loader').remove()
                 $('.calc').removeAttr("disabled").html("<span><b>Calculer</b></span>")
@@ -191,7 +191,10 @@
     const _calcNumSubscribesDOWNLINK = (params) => {
         const { i = new Number(), w = new Number(), r = new Number(), v = new Number(), l = new Number(), n = new Number(), a = new Number() , e = new Number()} = params;
         const loadfactordownlink = (v) * (1 - parseFloat(a) + parseFloat(i)) * ((Math.pow(10, e / 10)) / (parseFloat(w) / parseFloat(r)));
-        
+        const nbuser = parseFloat(l) / (loadfactordownlink * 100)
+        $('.outputloadfactorperuserdw').html(loadfactordownlink * 100)
+        $('.outpnbuserdw').html(nbuser)
+        $('.convertnbuserdw').html(Math.round(nbuser))
     };
     $('#bs').on("change", (e) => {
         e.preventDefault()
@@ -240,7 +243,7 @@
                     w: infos['cr']['vals']['wup'],
                     r: infos['ur']['vals']['rdw'],
                     v: infos['va']['vals']['adw'],
-                    l: infos['lb']['vals']['lbup'],
+                    l: infos['lb']['vals']['lbdw'],
                     e: infos['eb']['vals']['ebdw']
                 })
             }
