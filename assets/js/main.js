@@ -172,10 +172,15 @@
         // V : voice factor
         // N : nombre d'utilisateur actif dans une cellule
         if(i && w && r && v && n){
-            // console.log(e);
-            const loadfactoruplink = ( 1 + i ) * (1 / ( 1 + w / (Math.pow(10, e / 10) * r * v)))
+            console.log("e" + e);
+            console.log("w" + w);
+            console.log("i" + (parseFloat(i) + 1));
+            console.log("v" + v);
+            console.log("r" + r);
+            const loadfactoruplink = ( 1 + parseFloat(i) ) * (1 / ( 1 + parseFloat(w) / ( Math.pow(10, parseFloat(e) / 10) * parseFloat(r) * parseFloat(v) )))
             const loadfactoruplinkpercent = loadfactoruplink * 100;
-            console.log(loadfactoruplinkpercent);
+            console.log(loadfactoruplink);
+            $('.outputloadfactorperuser').html(loadfactoruplinkpercent)
         }else return {
             code : 401,
             message : "il ya des paramètres qui manquent"
