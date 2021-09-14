@@ -233,7 +233,8 @@
                     e: infos['eb']['vals']['ebup']
                 })
                 _calcNumSubscribesDOWNLINK({
-                    i: infos['bs']['type'] !== "omni" ? infos['bs']['vals']['adw'] : undefined,
+                    i: infos['bs']['vals']['idw'],
+                    a: infos['bs']['vals']['adw'],
                     w: infos['cr']['vals']['wup'],
                     r: infos['ur']['vals']['rup'],
                     v: infos['va']['vals']['aup'],
