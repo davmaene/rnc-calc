@@ -188,6 +188,9 @@
             message : "il ya des paramètres qui manquent"
         }
     }
+    const _calcNumSubscribesDOWNLINK = (params) => {
+
+    }
     $('#bs').on("change", (e) => {
         e.preventDefault()
         switch (e.target.value) {
@@ -207,6 +210,7 @@
     });
 
     $(".calc").on('click', (e) => {
+        e.preventDefault();
         const span = document.createElement("span");
         $(span).attr(
             {
@@ -214,7 +218,7 @@
                 class: "spinner-border spinner-border-sm"
             }
         )
-        e.preventDefault();
+
         if(_checked() instanceof Object){
             const infos = _checked();
             $(e.target).prop("disabled", "disabled").html(span)
