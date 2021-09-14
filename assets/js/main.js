@@ -174,7 +174,8 @@
         if(i && w && r && v && n){
             // console.log(e);
             const loadfactoruplink = ( 1 + i ) * (1 / ( 1 + w / (Math.pow(10, e / 10) * r * v)))
-            console.log(loadfactoruplink);
+            const loadfactoruplinkpercent = loadfactoruplink * 100;
+            console.log(loadfactoruplinkpercent);
         }else return {
             code : 401,
             message : "il ya des paramètres qui manquent"
