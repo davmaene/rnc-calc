@@ -172,13 +172,9 @@
         // V : voice factor
         // N : nombre d'utilisateur actif dans une cellule
         if(i && w && r && v && n){
-            console.log("e" + e);
-            console.log("w" + w);
-            console.log("i" + (parseFloat(i) + 1));
-            console.log("v" + v);
-            console.log("r" + r);
             const loadfactoruplink = ( 1 + parseFloat(i) ) * (1 / ( 1 + parseFloat(w) / ( Math.pow(10, parseFloat(e) / 10) * parseFloat(r) * parseFloat(v) )))
             const loadfactoruplinkpercent = loadfactoruplink * 100;
+            const nbuser = parseFloat(l) / 
             console.log(loadfactoruplink);
             $('.outputloadfactorperuser').html(loadfactoruplinkpercent)
         }else return {
