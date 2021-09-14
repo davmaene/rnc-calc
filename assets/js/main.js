@@ -179,6 +179,10 @@
             $('.converloadfac').html(Math.floor(loadfactoruplink * 100));
             $('.outpnbuser').html(nbuser);
             $('.convertnbuser').html(Math.floor(nbuser));
+            setTimeout(() => {
+                $('#loader').remove()
+                $('.calc').removeAttr("disabled").html("<span><b>Calculer</b></span>")
+            }, 300)
         }else return {
             code : 401,
             message : "il ya des paramètres qui manquent"
@@ -213,7 +217,7 @@
         e.preventDefault();
         if(_checked() instanceof Object){
             const infos = _checked();
-            $(e.target).prop("disabled", true).html(span)
+            $(e.target).prop("disabled", "disabled").html(span)
             // for downlink
             _calcNumSubscribesUPLINK({
                 i: infos['bs']['type'] === "omni" ? infos['bs']['vals']['iup'] : undefined,
