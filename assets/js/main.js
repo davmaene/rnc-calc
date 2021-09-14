@@ -115,7 +115,12 @@
         }
         // _checkbstype() && _checkvoicefactor() && _checkchiprate() && _checkuserdatarate && _checken() && _checkloadfatory()
         if(_checkbstype() && _checkvoicefactor() && _checkchiprate() && _checkuserdatarate && _checken() && _checkloadfatory()){
-
+            return {
+                bs: {
+                    type: $("#bs").val(),
+                    vals: ""
+                }
+            }
         }else return false;
     } 
     const _calcNumSubscribes = (params) => {
