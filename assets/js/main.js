@@ -211,7 +211,7 @@
         $(span).attr(
             {
                 id: "loader",
-                class: "spinner-grow spinner-grow-sm"
+                class: "spinner-border spinner-border-sm"
             }
         )
         e.preventDefault();
