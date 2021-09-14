@@ -187,10 +187,10 @@
             code : 401,
             message : "il ya des paramètres qui manquent"
         }
-    }
+    };
     const _calcNumSubscribesDOWNLINK = (params) => {
-
-    }
+        const loadfactordownlink = 
+    };
     $('#bs').on("change", (e) => {
         e.preventDefault()
         switch (e.target.value) {
@@ -223,14 +223,24 @@
             const infos = _checked();
             $(e.target).prop("disabled", "disabled").html(span)
             // for downlink
-            _calcNumSubscribesUPLINK({
-                i: infos['bs']['type'] === "omni" ? infos['bs']['vals']['iup'] : undefined,
-                w: infos['cr']['vals']['wup'],
-                r: infos['ur']['vals']['rup'],
-                v: infos['va']['vals']['aup'],
-                l: infos['lb']['vals']['lbup'],
-                e: infos['eb']['vals']['ebup']
-            })
+            if(infos['bs']['type'] === "omni"){
+                _calcNumSubscribesUPLINK({
+                    i: infos['bs']['type'] === "omni" ? infos['bs']['vals']['iup'] : undefined,
+                    w: infos['cr']['vals']['wup'],
+                    r: infos['ur']['vals']['rup'],
+                    v: infos['va']['vals']['aup'],
+                    l: infos['lb']['vals']['lbup'],
+                    e: infos['eb']['vals']['ebup']
+                })
+                _calcNumSubscribesDOWNLINK({
+                    i: infos['bs']['type'] !== "omni" ? infos['bs']['vals']['adw'] : undefined,
+                    w: infos['cr']['vals']['wup'],
+                    r: infos['ur']['vals']['rup'],
+                    v: infos['va']['vals']['aup'],
+                    l: infos['lb']['vals']['lbup'],
+                    e: infos['eb']['vals']['ebup']
+                })
+            }
         }
-    })
+    });
 })()
