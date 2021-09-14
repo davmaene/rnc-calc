@@ -122,7 +122,7 @@
                     vals: {
                         iup: $('[name="iuplink"]').val(),
                         idw: $('[name="idownlink"]').val(),
-                        adw: $('[name="adownlink"]').val(),
+                        alpdw: $('[name="adownlink"]').val(),
                     }
                 },
                 va: {
@@ -189,7 +189,9 @@
         }
     };
     const _calcNumSubscribesDOWNLINK = (params) => {
-        const loadfactordownlink = 
+        const { i = new Number(), w = new Number(), r = new Number(), v = new Number(), l = new Number(), n = new Number(), a = new Number() , e = new Number()} = params;
+        const loadfactordownlink = (v) * (1 - parseFloat(a) + parseFloat(i)) * ((Math.pow(10, e / 10)) / (parseFloat(w) / parseFloat(r)));
+        
     };
     $('#bs').on("change", (e) => {
         e.preventDefault()
@@ -234,12 +236,12 @@
                 })
                 _calcNumSubscribesDOWNLINK({
                     i: infos['bs']['vals']['idw'],
-                    a: infos['bs']['vals']['adw'],
+                    a: infos['bs']['vals']['alpdw'],
                     w: infos['cr']['vals']['wup'],
-                    r: infos['ur']['vals']['rup'],
-                    v: infos['va']['vals']['aup'],
+                    r: infos['ur']['vals']['rdw'],
+                    v: infos['va']['vals']['adw'],
                     l: infos['lb']['vals']['lbup'],
-                    e: infos['eb']['vals']['ebup']
+                    e: infos['eb']['vals']['ebdw']
                 })
             }
         }
