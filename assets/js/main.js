@@ -172,8 +172,8 @@
         // V : voice factor
         // N : nombre d'utilisateur actif dans une cellule
         if(i && w && r && v && n){
-            console.log();
-            const loadfactoruplink = (1 + i) * (1 / ( 1 + (w / (Math.pow(10, e) * r * v))))
+            // console.log(e);
+            const loadfactoruplink = ( 1 + i ) * (1 / ( 1 + w / (Math.pow(10, e / 10) * r * v)))
             console.log(loadfactoruplink);
         }else return {
             code : 401,
