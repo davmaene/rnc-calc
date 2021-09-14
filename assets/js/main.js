@@ -138,6 +138,27 @@
                         rup: $('[name="ruplink"]').val(),
                         rdw: $('[name="rdownlink"]').val()
                     }
+                },
+                cr: {
+                    name: "chip rate",
+                    vals: {
+                        wup: $('[name="wuplink"]').val(),
+                        wdw: $('[name="wdownlink"]').val()
+                    }
+                },
+                eb: {
+                    name: "eb / no",
+                    vals: {
+                        ebup: $('[name="enuplink"]').val(),
+                        ebdw: $('[name="endownlink"]').val()
+                    }
+                },
+                lb: {
+                    name: "load factor",
+                    vals: {
+                        lbup: $('[name="lduplink"]').val(),
+                        lbdw: $('[name="lddownlink"]').val()
+                    }
                 }
             }
         }else return false;
