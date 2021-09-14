@@ -117,8 +117,27 @@
         if(_checkbstype() && _checkvoicefactor() && _checkchiprate() && _checkuserdatarate && _checken() && _checkloadfatory()){
             return {
                 bs: {
+                    name: "bs type",
                     type: $("#bs").val(),
-                    vals: ""
+                    vals: {
+                        iup: $('[name="iuplink"]').val(),
+                        idw: $('[name="idownlink"]').val(),
+                        adw: $('[name="adownlink"]').val(),
+                    }
+                },
+                va: {
+                    name: "voice activity",
+                    vals: {
+                       aup: $('[name="vuplink"]').val(),
+                       adw: $('[name="vdownlink"]').val()
+                    }
+                },
+                ur: {
+                    name: "user rate",
+                    vals: {
+                        rup: $('[name="ruplink"]').val(),
+                        rdw: $('[name="rdownlink"]').val()
+                    }
                 }
             }
         }else return false;
