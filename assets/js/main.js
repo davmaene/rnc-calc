@@ -173,10 +173,12 @@
         // N : nombre d'utilisateur actif dans une cellule
         if(i && w && r && v && n){
             const loadfactoruplink = ( 1 + parseFloat(i) ) * (1 / ( 1 + parseFloat(w) / ( Math.pow(10, parseFloat(e) / 10) * parseFloat(r) * parseFloat(v) )))
-            const loadfactoruplinkpercent = loadfactoruplink * 100;
-            const nbuser = parseFloat(l) / 
-            console.log(loadfactoruplink);
-            $('.outputloadfactorperuser').html(loadfactoruplinkpercent)
+            const nbuser = parseFloat(l) / (loadfactoruplink * 100);
+
+            $('.outputloadfactorperuser').html(loadfactoruplink * 100);
+            $('.converloadfac').html(Math.floor(loadfactoruplink * 100))
+            $('.outpnbuser').html(nbuser);
+            $('.convertnbuser').html(Math.floor(nbuser))
         }else return {
             code : 401,
             message : "il ya des paramètres qui manquent"
