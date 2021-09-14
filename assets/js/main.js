@@ -176,9 +176,9 @@
             const nbuser = parseFloat(l) / (loadfactoruplink * 100);
 
             $('.outputloadfactorperuser').html(loadfactoruplink * 100);
-            $('.converloadfac').html(Math.floor(loadfactoruplink * 100))
+            $('.converloadfac').html(Math.floor(loadfactoruplink * 100));
             $('.outpnbuser').html(nbuser);
-            $('.convertnbuser').html(Math.floor(nbuser))
+            $('.convertnbuser').html(Math.floor(nbuser));
         }else return {
             code : 401,
             message : "il ya des paramètres qui manquent"
