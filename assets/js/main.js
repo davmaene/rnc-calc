@@ -163,8 +163,8 @@
             }
         }else return false;
     } 
-    const _calcNumSubscribes = (params) => {
-        const { i = new Number(), w = new Number(), r = new Number(), v = new Number(), l = new Number(), n = new Number(), } = params;
+    const _calcNumSubscribesUPLINK = (params) => {
+        const { i = new Number(), w = new Number(), r = new Number(), v = new Number(), l = new Number(), n = new Number(), a = new Number() , e = new Number()} = params;
         // i = new Number(), w = new Number(), r = new Number(), v = new Number(), N = new Number()
         // i : rapprt de l'interferance intra cellulaire sur l'interferance inter cellulaire
         // W : chip rate en kcps
@@ -172,7 +172,7 @@
         // V : voice factor
         // N : nombre d'utilisateur actif dans une cellule
         if(i && w && r && v && n){
-            
+            console.log(params);
         }else return {
             code : 401,
             message : "il ya des paramètres qui manquent"
@@ -206,7 +206,17 @@
         )
         e.preventDefault();
         if(_checked() instanceof Object){
-            // $(e.target).prop("disabled", true).html(span)
+            const infos = _checked();
+            $(e.target).prop("disabled", true).html(span)
+            // for downlink
+            _calcNumSubscribesUPLINK({
+                i: infos['bs']['type'] === "omni" ? infos['bs']['vals']['iup'] : undefined,
+                w: infos['cr']['vals']['wup'],
+                r: infos['ur']['vals']['rup'],
+                v: infos['va']['vals']['aup'],
+                l: infos['lb']['vals']['lbup'],
+                e: infos['eb']['vals']['ebup']
+            })
         }
     })
 })()
